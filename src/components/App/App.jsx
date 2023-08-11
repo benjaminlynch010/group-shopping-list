@@ -38,7 +38,7 @@ function App() {
                 <GroceryForm fetchGroceries={fetchGroceries}/>
                 <DeleteListBtn fetchGroceries={fetchGroceries}/>
                 <ResetPurchaseBtn fetchGroceries={fetchGroceries}/>
-                <ListItem shoppingList={shoppingList}/>
+                <ListItem shoppingList={shoppingList} fetchGroceries={fetchGroceries}/>
             </main>
         </div>
     );
