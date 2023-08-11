@@ -1,9 +1,12 @@
 import ItemInfo from "./ItemInfo/ItemInfo"
 
-function ListItem({shoppingList}) {
+
+function ListItem({ shoppingList, fetchGroceries }) {
     console.log('shoping list in List Item: ', shoppingList)
     return (
-    <ItemInfo shoppingList={shoppingList}/>
+        <>
+            <ItemInfo shoppingList={shoppingList} fetchGroceries={fetchGroceries} />
+        </>
     )
 }
 

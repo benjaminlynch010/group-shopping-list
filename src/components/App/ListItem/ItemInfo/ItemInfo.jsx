@@ -1,11 +1,14 @@
-function ItemInfo({ shoppingList }) {
+import DeleteItemBtn from "../../../DeleteItemBtn/DeleteItemBtn"
+import PurchasedBtn from "../../PurchasedBtn/PurchasedBtn";
+
+function ItemInfo({ shoppingList, fetchGroceries }) {
     return (
         <div>
             {shoppingList?.map(item => (
                 <div key={item.id}>
                     <div>{item.item} {item.quantity} {item.unit}</div>
-                    {/* <DeleteButton studentId={student.id} getList={getList} /> */}
-
+                    <DeleteItemBtn itemId={item.id} shoppingList={shoppingList} fetchGroceries={fetchGroceries} />
+                    <PurchasedBtn itemId={item.id} shoppingList={shoppingList} fetchGroceries={fetchGroceries} />
                 </div>
             ))
             }
@@ -13,4 +16,4 @@ function ItemInfo({ shoppingList }) {
     )
 }
 
-export default ItemInfo
+export default ItemInfo;
