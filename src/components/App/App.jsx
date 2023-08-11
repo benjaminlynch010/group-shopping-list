@@ -4,6 +4,8 @@ import axios from 'axios';
 import Header from '../Header/Header.jsx'
 import './App.css';
 
+import GroceryForm from '../GroceryForm/GroceryForm.jsx';
+import ListItem from './ListItem/ListItem.jsx';
 
 function App() {
 
@@ -31,6 +33,8 @@ function App() {
             <Header />
             <main>
                 <p>Under Construction...</p>
+                <GroceryForm fetchGroceries={fetchGroceries}/>
+                <ListItem shoppingList={shoppingList}/>
             </main>
         </div>
     );
