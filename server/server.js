@@ -15,5 +15,5 @@ app.use('/list', router);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {
-    console.log('Listening on port: ', PORT);
+    console.log('🙉 on port: ', PORT);
 });
