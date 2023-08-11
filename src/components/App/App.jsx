@@ -6,6 +6,8 @@ import './App.css';
 
 import GroceryForm from '../GroceryForm/GroceryForm.jsx';
 import ListItem from './ListItem/ListItem.jsx';
+import DeleteListBtn from './DeleteListBtn/DeleteListBtn.jsx';
+import ResetPurchaseBtn from './ResetPurchaseBtn/ResetPurchaseBtn.jsx';
 
 function App() {
 
@@ -34,6 +36,8 @@ function App() {
             <main>
                 <p>Under Construction...</p>
                 <GroceryForm fetchGroceries={fetchGroceries}/>
+                <DeleteListBtn fetchGroceries={fetchGroceries}/>
+                <ResetPurchaseBtn fetchGroceries={fetchGroceries}/>
                 <ListItem shoppingList={shoppingList}/>
             </main>
         </div>
