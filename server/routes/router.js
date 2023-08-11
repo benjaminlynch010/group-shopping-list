@@ -41,6 +41,18 @@ router.delete('/', (req, res) => {
     })
 })
 
+router.delete('/singleitem/:id', (req, res) => {
+  const params = req.params.id
+  const queryText = `DELETE FROM "list" WHERE "id"=$1;`
+  pool.query(queryText, [params])
+    .then((response) => {
+      res.sendStatus(200)
+    }).catch((error) => {
+      console.log("Error Deleting `list` item | ", error)
+      res.sendStatus(500)
+    })
+})
+
 router.put('/', (req, res) => {
   const queryText = `
   UPDATE "list"  
@@ -52,6 +64,23 @@ router.put('/', (req, res) => {
       res.sendStatus(200)
     }).catch((error) => {
       console.log('Error resetting `purchased` | ', error)
+      res.sendStatus(500)
+    })
+})
+
+router.put('/singleitem/:id', (req, res) => {
+  const params = req.params.id
+  const queryText = `
+  UPDATE "list"  
+  SET "purchased"= NOT "purchased"
+  WHERE "id"=$1;`
+
+  pool.query(queryText, [params])
+    .then((response) => {
+      console.log('Toggled purchased status successful')
+      res.sendStatus(200)
+    }).catch((error) => {
+      console.log('Error toggling `purchased` | ', error)
       res.sendStatus(500)
     })
 })

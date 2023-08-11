@@ -1,5 +1,8 @@
 -- Don't forget to add your create table SQL 
--- It is also helpful to include some test dataCREATE TABLE list (
+-- It is also helpful to include some test data
+-- fs-react-shopping
+
+    CREATE TABLE list (
 	"id" SERIAL PRIMARY KEY,
 	"item" varchar(80),
 	"quantity" DECIMAL(5,2),
