@@ -29,7 +29,13 @@ function GroceryForm({fetchGroceries}) {
   return (
     <form onSubmit={handleSubmit}>
       <label>Item:</label>
-      <input onChange={(event)=>setNewItem(event.target.value)} value={newItem}/>
+      <input type="text" onChange={(event)=>setNewItem(event.target.value)} value={newItem}/>
+      <label>Quantity:</label>
+      <input type="number" onChange={(event)=>setNewQuantity(event.target.value)} value={newQuantity}/>
+      <label>Unit:</label>
+      <input type="text" onChange={(event)=>setNewUnit(event.target.value)} value={newUnit}/>
+
+      <button type="submit">Add Item</button>
 
     </form>
   )
